@@ -231,6 +231,7 @@ $pending_requests = getServiceRequests($pdo, 'รอการอนุมัต�
                                             <?php endforeach; ?>
                                         </tbody>
                                     </table>
+                                    
                                 </div>
                             </div>
                         </div>
