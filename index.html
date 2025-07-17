@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ระบบรายงานการทำงาน</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top custom-navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><i class="fa fa-clipboard"></i> ระบบรายงานการทำงาน</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#dashboard" data-toggle="tab"><i class="fa fa-dashboard"></i> แดชบอร์ด</a></li>
+                    <li><a href="#reports" data-toggle="tab"><i class="fa fa-file-text"></i> รายงานทั้งหมด</a></li>
+                    <li><a href="#create" data-toggle="tab"><i class="fa fa-plus"></i> สร้างรายงาน</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-user"></i> นายสมชาย ใจดี <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#"><i class="fa fa-user"></i> โปรไฟล์</a></li>
+                            <li><a href="#"><i class="fa fa-cog"></i> ตั้งค่า</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#"><i class="fa fa-sign-out"></i> ออกจากระบบ</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container-fluid main-content">
+        <div class="tab-content">
+            <!-- Dashboard Tab -->
+            <div class="tab-pane active" id="dashboard">
+                <div class="page-header">
+                    <h1><i class="fa fa-dashboard"></i> แดชบอร์ด <small>ภาพรวมการทำงาน</small></h1>
+                </div>
+                
+                <!-- Stats Cards -->
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-primary stats-card">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-file-text fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">26</div>
+                                        <div>รายงานทั้งหมด</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-footer">
+                                <span class="pull-left">ดูรายละเอียด</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-green stats-card">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-check fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">24</div>
+                                        <div>เสร็จสิ้น</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-footer">
+                                <span class="pull-left">ดูรายละเอียด</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-yellow stats-card">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-clock-o fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">2</div>
+                                        <div>กำลังดำเนินการ</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-footer">
+                                <span class="pull-left">ดูรายละเอียด</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-red stats-card">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-calendar fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">5</div>
+                                        <div>รายงานเดือนนี้</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-footer">
+                                <span class="pull-left">ดูรายละเอียด</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Reports -->
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <i class="fa fa-clock-o"></i> รายงานล่าสุด
+                            </div>
+                            <div class="panel-body">
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>วันที่</th>
+                                                <th>หัวข้อ</th>
+                                                <th>สถานะ</th>
+                                                <th>การดำเนินการ</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>15/01/2025</td>
+                                                <td>รายงานความคืบหน้าโครงการ A</td>
+                                                <td><span class="label label-success">เสร็จสิ้น</span></td>
+                                                <td>
+                                                    <button class="btn btn-xs btn-info"><i class="fa fa-eye"></i></button>
+                                                    <button class="btn btn-xs btn-warning"><i class="fa fa-edit"></i></button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>14/01/2025</td>
+                                                <td>รายงานการประชุมประจำสัปดาห์</td>
+                                                <td><span class="label label-success">เสร็จสิ้น</span></td>
+                                                <td>
+                                                    <button class="btn btn-xs btn-info"><i class="fa fa-eye"></i></button>
+                                                    <button class="btn btn-xs btn-warning"><i class="fa fa-edit"></i></button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>13/01/2025</td>
+                                                <td>รายงานการใช้งบประมาณ</td>
+                                                <td><span class="label label-warning">กำลังดำเนินการ</span></td>
+                                                <td>
+                                                    <button class="btn btn-xs btn-info"><i class="fa fa-eye"></i></button>
+                                                    <button class="btn btn-xs btn-warning"><i class="fa fa-edit"></i></button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <i class="fa fa-bell"></i> การแจ้งเตือน
+                            </div>
+                            <div class="panel-body">
+                                <div class="list-group">
+                                    <a href="#" class="list-group-item">
+                                        <i class="fa fa-comment fa-fw"></i> รายงานใหม่ต้องการการอนุมัติ
+                                        <span class="pull-right text-muted small"><em>4 นาทีที่แล้ว</em></span>
+                                    </a>
+                                    <a href="#" class="list-group-item">
+                                        <i class="fa fa-twitter fa-fw"></i> มีการอัพเดทระบบใหม่
+                                        <span class="pull-right text-muted small"><em>12 นาทีที่แล้ว</em></span>
+                                    </a>
+                                    <a href="#" class="list-group-item">
+                                        <i class="fa fa-envelope fa-fw"></i> รายงานประจำเดือนครบกำหนด
+                                        <span class="pull-right text-muted small"><em>27 นาทีที่แล้ว</em></span>
+                                    </a>
+                                </div>
+                                <div class="text-right">
+                                    <a href="#">ดูการแจ้งเตือนทั้งหมด <i class="fa fa-arrow-circle-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reports Tab -->
+            <div class="tab-pane" id="reports">
+                <div class="page-header">
+                    <h1><i class="fa fa-file-text"></i> รายงานทั้งหมด <small>จัดการรายงานการทำงาน</small></h1>
+                </div>
+                
+                <!-- Search and Filter -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <form class="form-inline">
+                                    <div class="form-group">
+                                        <label for="search">ค้นหา:</label>
+                                        <input type="text" class="form-control" id="search" placeholder="ค้นหารายงาน...">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="status-filter">สถานะ:</label>
+                                        <select class="form-control" id="status-filter">
+                                            <option value="">ทั้งหมด</option>
+                                            <option value="completed">เสร็จสิ้น</option>
+                                            <option value="pending">กำลังดำเนินการ</option>
+                                            <option value="draft">ร่าง</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="date-filter">วันที่:</label>
+                                        <input type="date" class="form-control" id="date-filter">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i> ค้นหา</button>
+                                    <button type="button" class="btn btn-default"><i class="fa fa-refresh"></i> รีเซ็ต</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reports Table -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <i class="fa fa-table"></i> รายการรายงาน
+                                <div class="pull-right">
+                                    <button class="btn btn-success btn-sm"><i class="fa fa-plus"></i> สร้างรายงานใหม่</button>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-hover" id="reports-table">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>วันที่สร้าง</th>
+                                                <th>หัวข้อรายงาน</th>
+                                                <th>ประเภท</th>
+                                                <th>สถานะ</th>
+                                                <th>ผู้สร้าง</th>
+                                                <th>การดำเนินการ</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>15/01/2025</td>
+                                                <td>รายงานความคืบหน้าโครงการพัฒนาระบบ</td>
+                                                <td><span class="label label-info">โครงการ</span></td>
+                                                <td><span class="label label-success">เสร็จสิ้น</span></td>
+                                                <td>นายสมชาย ใจดี</td>
+                                                <td>
+                                                    <button class="btn btn-xs btn-info" title="ดู"><i class="fa fa-eye"></i></button>
+                                                    <button class="btn btn-xs btn-warning" title="แก้ไข"><i class="fa fa-edit"></i></button>
+                                                    <button class="btn btn-xs btn-success" title="พิมพ์"><i class="fa fa-print"></i></button>
+                                                    <button class="btn btn-xs btn-danger" title="ลบ"><i class="fa fa-trash"></i></button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>14/01/2025</td>
+                                                <td>รายงานการประชุมประจำสัปดาห์</td>
+                                                <td><span class="label label-warning">ประชุม</span></td>
+                                                <td><span class="label label-success">เสร็จสิ้น</span></td>
+                                                <td>นางสาวสมหญิง ดีใจ</td>
+                                                <td>
+                                                    <button class="btn btn-xs btn-info" title="ดู"><i class="fa fa-eye"></i></button>
+                                                    <button class="btn btn-xs btn-warning" title="แก้ไข"><i class="fa fa-edit"></i></button>
+                                                    <button class="btn btn-xs btn-success" title="พิมพ์"><i class="fa fa-print"></i></button>
+                                                    <button class="btn btn-xs btn-danger" title="ลบ"><i class="fa fa-trash"></i></button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>13/01/2025</td>
+                                                <td>รายงานการใช้งบประมาณไตรมาสที่ 1</td>
+                                                <td><span class="label label-primary">การเงิน</span></td>
+                                                <td><span class="label label-warning">กำลังดำเนินการ</span></td>
+                                                <td>นายสมศักดิ์ มั่นคง</td>
+                                                <td>
+                                                    <button class="btn btn-xs btn-info" title="ดู"><i class="fa fa-eye"></i></button>
+                                                    <button class="btn btn-xs btn-warning" title="แก้ไข"><i class="fa fa-edit"></i></button>
+                                                    <button class="btn btn-xs btn-success" title="พิมพ์"><i class="fa fa-print"></i></button>
+                                                    <button class="btn btn-xs btn-danger" title="ลบ"><i class="fa fa-trash"></i></button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>12/01/2025</td>
+                                                <td>รายงานการฝึกอบรมพนักงาน</td>
+                                                <td><span class="label label-success">HR</span></td>
+                                                <td><span class="label label-default">ร่าง</span></td>
+                                                <td>นางสาวสุดา เก่งมาก</td>
+                                                <td>
+                                                    <button class="btn btn-xs btn-info" title="ดู"><i class="fa fa-eye"></i></button>
+                                                    <button class="btn btn-xs btn-warning" title="แก้ไข"><i class="fa fa-edit"></i></button>
+                                                    <button class="btn btn-xs btn-success" title="พิมพ์"><i class="fa fa-print"></i></button>
+                                                    <button class="btn btn-xs btn-danger" title="ลบ"><i class="fa fa-trash"></i></button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>11/01/2025</td>
+                                                <td>รายงานการตรวจสอบคุณภาพ</td>
+                                                <td><span class="label label-danger">QA</span></td>
+                                                <td><span class="label label-success">เสร็จสิ้น</span></td>
+                                                <td>นายวิชัย ละเอียด</td>
+                                                <td>
+                                                    <button class="btn btn-xs btn-info" title="ดู"><i class="fa fa-eye"></i></button>
+                                                    <button class="btn btn-xs btn-warning" title="แก้ไข"><i class="fa fa-edit"></i></button>
+                                                    <button class="btn btn-xs btn-success" title="พิมพ์"><i class="fa fa-print"></i></button>
+                                                    <button class="btn btn-xs btn-danger" title="ลบ"><i class="fa fa-trash"></i></button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- Pagination -->
+                                <nav aria-label="Page navigation">
+                                    <ul class="pagination">
+                                        <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+                                        <li class="active"><a href="#">1</a></li>
+                                        <li><a href="#">2</a></li>
+                                        <li><a href="#">3</a></li>
+                                        <li><a href="#">4</a></li>
+                                        <li><a href="#">5</a></li>
+                                        <li><a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Create Report Tab -->
+            <div class="tab-pane" id="create">
+                <div class="page-header">
+                    <h1><i class="fa fa-plus"></i> สร้างรายงานใหม่ <small>เพิ่มรายงานการทำงาน</small></h1>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <i class="fa fa-edit"></i> ข้อมูลรายงาน
+                            </div>
+                            <div class="panel-body">
+                                <form id="create-report-form">
+                                    <div class="form-group">
+                                        <label for="report-title">หัวข้อรายงาน <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" id="report-title" placeholder="กรอกหัวข้อรายงาน" required>
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="report-type">ประเภทรายงาน <span class="text-danger">*</span></label>
+                                                <select class="form-control" id="report-type" required>
+                                                    <option value="">เลือกประเภทรายงาน</option>
+                                                    <option value="project">โครงการ</option>
+                                                    <option value="meeting">ประชุม</option>
+                                                    <option value="finance">การเงิน</option>
+                                                    <option value="hr">HR</option>
+                                                    <option value="qa">QA</option>
+                                                    <option value="other">อื่นๆ</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="report-date">วันที่รายงาน <span class="text-danger">*</span></label>
+                                                <input type="date" class="form-control" id="report-date" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="report-summary">สรุปผลการทำงาน</label>
+                                        <textarea class="form-control" id="report-summary" rows="4" placeholder="สรุปผลการทำงานโดยย่อ"></textarea>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="report-details">รายละเอียดการทำงาน <span class="text-danger">*</span></label>
+                                        <textarea class="form-control" id="report-details" rows="8" placeholder="อธิบายรายละเอียดการทำงานอย่างละเอียด" required></textarea>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="report-problems">ปัญหาที่พบ</label>
+                                        <textarea class="form-control" id="report-problems" rows="4" placeholder="ระบุปัญหาที่พบในการทำงาน (ถ้ามี)"></textarea>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="report-solutions">แนวทางแก้ไข</label>
+                                        <textarea class="form-control" id="report-solutions" rows="4" placeholder="แนวทางแก้ไขปัญหา (ถ้ามี)"></textarea>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="report-next">แผนการทำงานต่อไป</label>
+                                        <textarea class="form-control" id="report-next" rows="4" placeholder="แผนการทำงานในระยะต่อไป"></textarea>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="report-attachments">ไฟล์แนบ</label>
+                                        <input type="file" class="form-control" id="report-attachments" multiple>
+                                        <p class="help-block">สามารถแนบไฟล์ได้หลายไฟล์ (PDF, DOC, XLS, JPG, PNG)</p>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <div class="btn-group" role="group">
+                                            <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> บันทึกรายงาน</button>
+                                            <button type="button" class="btn btn-info"><i class="fa fa-eye"></i> ดูตัวอย่าง</button>
+                                            <button type="button" class="btn btn-warning"><i class="fa fa-floppy-o"></i> บันทึกร่าง</button>
+                                            <button type="reset" class="btn btn-default"><i class="fa fa-refresh"></i> ล้างข้อมูล</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                <i class="fa fa-info-circle"></i> คำแนะนำ
+                            </div>
+                            <div class="panel-body">
+                                <h5><i class="fa fa-lightbulb-o"></i> เทคนิคการเขียนรายงาน</h5>
+                                <ul class="list-unstyled">
+                                    <li><i class="fa fa-check text-success"></i> ใช้ภาษาที่เข้าใจง่าย</li>
+                                    <li><i class="fa fa-check text-success"></i> เขียนให้กระชับและตรงประเด็น</li>
+                                    <li><i class="fa fa-check text-success"></i> ระบุข้อมูลที่สำคัญครบถ้วน</li>
+                                    <li><i class="fa fa-check text-success"></i> แนบหลักฐานประกอบ</li>
+                                </ul>
+                                
+                                <h5><i class="fa fa-exclamation-triangle"></i> ข้อควรระวัง</h5>
+                                <ul class="list-unstyled">
+                                    <li><i class="fa fa-times text-danger"></i> อย่าลืมระบุวันที่</li>
+                                    <li><i class="fa fa-times text-danger"></i> ตรวจสอบความถูกต้อง</li>
+                                    <li><i class="fa fa-times text-danger"></i> อย่าใช้ภาษาที่ไม่เหมาะสม</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="panel panel-success">
+                            <div class="panel-heading">
+                                <i class="fa fa-history"></i> รายงานล่าสุด
+                            </div>
+                            <div class="panel-body">
+                                <div class="list-group">
+                                    <a href="#" class="list-group-item">
+                                        <h5 class="list-group-item-heading">รายงานโครงการ A</h5>
+                                        <p class="list-group-item-text">15/01/2025</p>
+                                    </a>
+                                    <a href="#" class="list-group-item">
+                                        <h5 class="list-group-item-heading">รายงานการประชุม</h5>
+                                        <p class="list-group-item-text">14/01/2025</p>
+                                    </a>
+                                    <a href="#" class="list-group-item">
+                                        <h5 class="list-group-item-heading">รายงานงบประมาณ</h5>
+                                        <p class="list-group-item-text">13/01/2025</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
